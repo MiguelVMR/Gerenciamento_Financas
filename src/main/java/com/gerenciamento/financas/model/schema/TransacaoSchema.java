@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import com.gerenciamento.financas.model.enums.EnumTipoCategoria;
 import com.gerenciamento.financas.model.enums.EnumTipoTransacao;
 import com.gerenciamento.financas.model.utils.GenericSchema;
 
@@ -40,9 +41,8 @@ public class TransacaoSchema extends GenericSchema {
     @JoinColumn(name = "conta_id")
     private ContaSchema contas;
 
-    @ManyToOne
-    @JoinColumn(name = "categoria_id")
-    private CategoriaSchema categorias;
-
+    @Enumerated(EnumType.STRING)
+    @Column(name = "categoria_transacao",length = 50)
+    private EnumTipoCategoria categoriaTransacao;
     
 }

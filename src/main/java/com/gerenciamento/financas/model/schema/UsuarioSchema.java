@@ -40,6 +40,6 @@ public class UsuarioSchema extends GenericSchema{
     @Column(name = "tipo_usuario",length = 20)
     private EnumTipoUsuario tipoUsuario;
 
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE,fetch = FetchType.EAGER)
     private List<ContaSchema> contas;
 }

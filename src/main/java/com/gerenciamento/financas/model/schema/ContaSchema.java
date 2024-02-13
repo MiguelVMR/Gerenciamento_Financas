@@ -38,6 +38,6 @@ public class ContaSchema extends GenericSchema {
     @JoinColumn(name = "usuario_id")
     private UsuarioSchema usuario;
 
-    @OneToMany(mappedBy = "contas" ,cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "contas" ,cascade = CascadeType.REMOVE,fetch = FetchType.EAGER)
     private List<TransacaoSchema> transacoes;
 }
